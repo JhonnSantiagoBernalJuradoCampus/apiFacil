@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        async function enviar(){
+            let myHeader = new Headers({
+                "Content-Type": "application/json"
+            })
+
+            let data = {
+                nombre: "Santiago",
+                apellido: "Bernal",
+                edad: 18
+            }
+            let config = {
+                method: "POST", 
+                headers: myHeader,
+                body: JSON.stringify(data)
+            }
+            let peticion = await fetch("https://64524ac7bce0b0a0f7422054.mockapi.io/usuario", config)
+            let json = await peticion.json();
+            console.log(json);
+        }
+    </script>
+</body>
+</html>
