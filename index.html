@@ -14,18 +14,18 @@
             let myHeader = new Headers({
                 "Content-Type": "application/json"
             })
-
+            let id = 3
             let data = {
                 nombre: "Santiago",
                 apellido: "Bernal",
                 edad: 18
             }
             let config = {
-                method: "POST", 
+                method: "DELETE", 
                 headers: myHeader,
                 body: JSON.stringify(data)
             }
-            let peticion = await fetch("https://64524ac7bce0b0a0f7422054.mockapi.io/usuario", config)
+            let peticion = await fetch(`https://64524ac7bce0b0a0f7422054.mockapi.io/usuario/${1}`, config)
             let json = await peticion.json();
             console.log(json);
         }
